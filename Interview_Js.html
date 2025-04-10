@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Interview</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        <!-- 1.Closures -->
+       /* A closure is when a function "remembers" the variables from its lexical scope even after the function is executed.*/
+
+
+        function Outer(Outertext){
+            return function Inner(Innertext){
+                console.log(`${Outertext}Hello ${Innertext}`)
+            }
+        }
+
+        const result=Outer("veliya bro")
+        result("ulla eruku bro")
+
+
+
+       /*
+       1.Promises and Async/Await
+
+       1.Promies -- Then(),Catch() for asynchronous operation
+       2.asynd/await ---- simplifies the promises making the asynchronous code look synchronous
+       */
+
+       fetch('https://api.example.com/data')
+       .then((res)=>res.json())
+       .then((res)=>console.log(res))
+       .catch((err)=>console.log(err))
+
+
+       async function fetchData(){
+        try{
+            const result=await fetch('https://api.example.com/data')
+            const data=await result.json()
+            console.log(data)
+        }
+        catch(err){
+            console.log(err)
+           }
+       
+       }
+      
+
+       /* Event Loop and call Stack  
+       
+       Event Loop is ensure the asychronous callback (promise, timers) execute the after the call stack is empty
+
+
+       
+       */
+
+
+       console.log("First")
+       setTimeout(()=>console.log("timeout"),1000)
+       Promise.resolve().then(()=>console.log('Hello'))
+       console.log("End")
+
+
+
+
+    
+
+      /* 
+
+       Array Methods
+      Question: How would you remove duplicates from an array?
+      
+      */
+      var kinggg=['1','2','3','4','4','3','8']
+
+      var result_1=[...new Set(kinggg)]
+      console.log(result_1)
+
+      /* Data Structures*/
+
+
+      function intersect(arr1,arr2){
+        return arr1.filter(item=> arr2.includes(item))
+      }
+
+      console.log(intersect([1,2,3],[2,3,4]))
+
+
+
+
+      /* 
+
+    Palindrome Check
+
+      */
+
+
+
+      function final(hey){
+        const nnn=hey.split('').reverse().join('');
+      return  hey=nnn
+      }
+    console.log(final('madam'))
+    
+
+    /* 
+
+    Palindrome Check
+
+      */
+
+
+      function anagaram(a1,a2){
+        const finallll=bbbb=> bbbb.split('').sort().join('')
+        return finallll(a1)===finallll(a2)
+      }
+      console.log(anagaram('listen','slient'))
+
+
+    </script>
+</body>
+</html>
