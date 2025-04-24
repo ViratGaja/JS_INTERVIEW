@@ -124,6 +124,37 @@
       console.log(anagaram('listen','slient'))
 
 
+
+    /*
+    Write a JavaScript function that takes an array of numbers and returns an array of unique elements*/
+
+    function unique(arr){
+      const result =new Set(arr)
+
+      return Array.from(result)
+    }
+
+    const input=[1,2,4,5,3,3,2,3,6,7]
+
+    const output_2=unique(input)
+
+    console.log(output_2)
+
+
+
+    function anotherway(arr){
+      return arr.filter((element,input)=>arr.indexOf(element)===index)
+    }
+
+    const input_2=[1,2,3,4,5,4,3,2,1]
+
+     const what=anotherway(input_2)
+     console.log(what)
+
+
+
+
+
     </script>
 </body>
 </html>
