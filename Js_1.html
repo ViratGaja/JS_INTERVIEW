@@ -8,6 +8,38 @@
 <body>
     <script>
         console.log(new Date().toLocaleTimeString({hour12:true}))
+
+
+
+        /* How can you copy an object in JavaScript?*/
+         const a={
+            a:3,
+            b:4
+        }
+        const result={...a}
+        console.log(result);
+
+
+
+        /* What does Object.freeze() and Object.seal() do
+        
+        1.Object.freeze(): Prevents modifications to properties (no additions, deletions, or updates).
+        2.Object.seal(): Prevents adding or deleting properties but allows updates to existing properties.
+        */
+
+        /*Freeze*/
+        let b={a:3}
+        Object.freeze(b)
+        b.a=4
+        console.log(b)
+
+
+        /*seal*/
+        let v={c:5}
+        Object.seal(v)
+        v.c=7
+        console.log(v)
+
     </script>
 </body>
 </html>
