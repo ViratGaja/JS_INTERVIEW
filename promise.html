@@ -1,0 +1,14 @@
+<script>
+    const Final_Result=new Promise((resolve,reject)=>{
+        let success=true;
+        if(success){
+            resolve("THis is Success")
+        }
+        else{
+            reject("this is less")
+        }
+    })
+    Final_Result.then((result)=>console.log(result))
+    .catch((err)=>console.log(err))
+    .finally(()=>console.log("finalhy"))
+</script>

@@ -1,0 +1,12 @@
+<script>
+    function outer_1(){
+        count=0;
+        return function inner(){
+            count++;
+            return count
+        }
+    }
+
+    const call_fun=outer_1();
+    console.log(call_fun())
+</script>

@@ -1,0 +1,25 @@
+<script>
+    /*Methode 1*/
+    function Duplicate(content){
+        return [...new Set(content)]
+
+    }
+    const result=[1,1,1,1,2]
+    const final_result=Duplicate(result)
+    console.log(final_result)
+
+
+    /*Methode 2*/
+
+
+        function method_2(arr_2){
+
+            const result=arr_2.filter((item,index)=>arr_2.indexOf(item)===index)
+            return result
+
+        }
+
+        let anupu=[1,2,2,2,2,2,2,3,4,5]
+        let resulttt=method_2(anupu)
+        console.log(resulttt)
+</script>

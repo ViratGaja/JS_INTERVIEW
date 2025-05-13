@@ -1,0 +1,19 @@
+<script>
+    function hello(name){
+        this.name = name;
+    }
+
+    hello.prototype.SayHello=function(){
+        return `Hello ${this.name}`
+    }
+
+
+    const result=new hello("king")
+    console.log(result)
+    console.log(result.SayHello())
+
+
+
+
+
+</script>
