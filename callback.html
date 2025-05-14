@@ -1,0 +1,27 @@
+<script>
+
+
+    /*Pass the argument to the another function*/
+    
+    function callback(name,fun){
+        console.log(`Thi is My ${name}`)
+        fun()
+    }
+
+    function callback_2(){
+        console.log("THis is the Finaly ")
+    }
+
+
+    callback("King",callback_2)
+
+
+    /*null*/
+    let a=null
+    console.log(a)
+
+    /*undefined*/
+
+    let b;
+    console.log(b)
+</script>
