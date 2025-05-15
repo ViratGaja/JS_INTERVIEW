@@ -1,0 +1,29 @@
+<script>
+    const final={
+        name:"King",
+        age:37,
+        vk:function(){
+            return `THis is ${this.name} and this is age ${this.age}`
+        }
+    }
+    const final_2={
+        name:"gill",
+        age:29
+    }
+
+
+    /*Call*/
+
+    console.log(final.vk.call(final_2))
+
+    /*Apply*/
+     console.log(final.vk.call(final_2))
+
+     /*bind*/
+     const result=final.vk.bind(final_2)
+    console.log(result())
+
+
+
+
+</script>
