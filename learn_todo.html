@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Todo</h1>
+    <input id="input" type="text" name="" id="">
+    <button id="submit">submit</button>
+    <ul id="dynamic"></ul>
+
+
+    <script>
+
+        const input=document.getElementById('input')
+        const button=document.getElementById('submit')
+        const ul=document.getElementById('dynamic')
+
+        button.addEventListener('click',()=>{
+
+            const content=input.value.trim()
+
+            if(content){
+                const li= document.createElement('li')
+                li.textContent=content;
+
+
+                const Dele_Button=document.createElement('button');
+                Dele_Button.textContent="Delete";
+                Dele_Button.addEventListener('click',()=>li.remove())
+
+                li.append(Dele_Button);
+
+                ul.append(li);
+                input.value=''
+                
+
+
+            }
+
+            
+            
+        })
+
+        
+    </script>
+    
+</body>
+</html>
