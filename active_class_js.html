@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-link.active{
+            background-color: aqua;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="nav-link active">Hello</li>
+        <li class="nav-link">Hii</li>
+        <li class="nav-link">dasf</li>
+        <li class="nav-link">fdsfaas</li>
+        <li class="nav-link">dasf</li>
+        <li class="nav-link">fdsfaas</li>
+        <li class="nav-link">dasf</li>
+        <li class="nav-link">fdsfaas</li>
+    </ul>
+
+    
+
+
+    <script>
+        
+        var nav_link=document.querySelectorAll('.nav-link')
+
+
+
+        nav_link.forEach((a)=>{
+            a.addEventListener('click',function(){
+                nav_link.forEach((link)=>link.classList.remove('active'))
+                this.classList.add('active')
+            })
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <button id="dropdown-btn">Hover me</button>
+    <div class="dropdown-content">
+      <p class="nav_link_1">Success</p>
+      <p class="nav-link">pending</p>
+      <p class="nav-link">fully</p>
+    </div>
+
+
+    <h1 style="margin-top: 40px;" class="dynamic"></h1>
+  </div>
+
+  <script>
+   var dropdown = document.querySelector(".dropdown-content");
+      var button = document.getElementById("dropdown-btn");
+      var nav_link=document.querySelector('.nav_link_1');
+      var dynamic=document.querySelector('.dynamic')
+     
+
+      button.addEventListener('click',()=>{
+        dropdown.style.display="block"
+      })
+
+      document.addEventListener('click',(e)=>{
+        if(!dropdown.contains(e.target)  && !button.contains(e.target)){
+            dropdown.style.display='none'
+        }
+      })
+      nav_link.addEventListener('click',()=>{
+        var result=nav_link.textContent.trim()
+
+        dynamic.textContent=`${result}`
+        
+      })
+  </script>
+</body>
+</html>
