@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table tbody{
+                text-align: center;
+            }
+            table thead ,table tbody{
+                border: 1px solid rgb(0, 225, 255);
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>User Details</h1>
+        <form action id="form">
+
+            <div style="margin-top: 20px;">
+                <label for>Name</label>
+                <input type="text" class="name">
+            </div>
+
+            <div style="margin-top: 20px;">
+                <label for>age</label>
+                <input type="text" class="age">
+            </div>
+
+            <div style="margin-top: 20px;">
+
+                <label for>Email</label>
+                <input type="email" class="mail">
+            </div>
+
+            <button style="margin-top: 20px;" type="submit">Submit</button>
+
+        </form>
+
+        <table style="margin-top: 50px;">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+        <script>
+            let index=0
+            document.getElementById('form').addEventListener('submit',function(e){
+                e.preventDefault()
+                index++;
+            var name=document.querySelector('.name').value.trim();
+            var age=document.querySelector('.age').value.trim();
+            var email=document.querySelector('.mail').value.trim();
+            var tbody=document.querySelector('tbody');
+
+            var table_tr=document.createElement('tr')
+                if(!name || !age ||!email){
+                    alert("please enter Your valid Data")
+                }
+            table_tr.innerHTML=`
+
+
+            <td>${index}</td>
+            <td>${name}</td>
+                <td>${age}</td>
+                <td>${email}</td>
+                <td></td>
+            
+            `
+
+        tbody.append(table_tr)
+
+
+
+
+
+
+
+            })
+           
+        </script>
+    </body>
+</html>
