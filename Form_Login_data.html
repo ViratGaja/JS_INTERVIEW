@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <div id="login-page">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+
+
+    document.getElementById('loginForm').addEventListener('submit',(e)=>{
+        e.preventDefault()
+
+        var name=document.getElementById('username').value.trim()
+        var password=document.getElementById('password').value.trim()
+
+        const cradential={
+            name:'king',
+            password:'2329'
+        }
+
+
+        if(name===cradential.name && password===cradential.password){
+            alert('Login Successfull');
+            localStorage.setItem('isLoggedIn',true)
+            window.location.href='new_home.html'
+        }
+        else{
+            alert("Pls Enter your correct password and Username")
+        }
+
+
+    })
+
+
+
+
+  </script>
+</body>
+</html>
