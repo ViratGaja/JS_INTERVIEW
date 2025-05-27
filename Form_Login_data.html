@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f9; }
+        .container { background: white; padding: 20px; width: 90%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; color: #333; }
+        label { font-size: 14px; color: #555; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        p { text-align: center; font-size: 14px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-  <div id="login-page">
-    <h1>Login</h1>
-    <form id="loginForm">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br><br>
-      <button type="submit">Login</button>
-    </form>
-  </div>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button type="submit">Login</button>
+            </div>
 
-  <script>
+            <p>Don't have an account? <a href="./Registration.html">Register</a></p>
+        </form>
+    </div>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    document.getElementById('loginForm').addEventListener('submit',(e)=>{
-        e.preventDefault()
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+          
 
-        var name=document.getElementById('username').value.trim()
-        var password=document.getElementById('password').value.trim()
+            var main_data=JSON.parse(localStorage.getItem('user'));
 
-        const cradential={
-            name:'king',
-            password:'2329'
-        }
+            if(!main_data){
+              alert("no user found")
+            }
 
+            if(main_data.email!==email||main_data.password!==password){
+              alert('pls enter correct data');
+              return;
+            }
 
-        if(name===cradential.name && password===cradential.password){
-            alert('Login Successfull');
-            localStorage.setItem('isLoggedIn',true)
-            window.location.href='new_home.html'
-        }
-        else{
-            alert("Pls Enter your correct password and Username")
-        }
-
-
-    })
-
-
-
-
-  </script>
+            alert('login successfully');
+            window.location.href="new_home.html"
+        });
+    </script>
 </body>
 </html>
