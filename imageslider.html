@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .slider {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides">
+      <img src="https://picsum.photos/800/400?random=1" alt="Slide 1">
+      <img src="https://picsum.photos/800/400?random=2" alt="Slide 2">
+      <img src="https://picsum.photos/800/400?random=3" alt="Slide 3">
+      <img src="https://picsum.photos/800/400?random=4" alt="Slide 4">
+    </div>
+    <button class="prev" onclick="preslide()">&#10094;</button>
+    <button class="next" onclick="nextslide()">&#10095;</button>
+  </div>
+
+
+
+
+
+
+  <script>
+
+    let slider=document.querySelector('.slides');
+    let slideImg=document.querySelectorAll('.slides img');
+
+
+
+    let currentIndex_new=0;
+
+
+    function nextslide(){
+        currentIndex_new=(currentIndex_new+1)%slideImg.length;
+        updateSlider()
+    }
+    function preslide(){
+         currentIndex_new=(currentIndex_new-1+slideImg.length)%slideImg.length;
+        updateSlider()
+    }
+
+
+    function updateSlider(){
+        slider.style.transform=`translateX(-${currentIndex_new*100}%)`
+    }
+
+
+    setInterval(nextslide,3000)
+
+
+
+
+  </script>
+</body>
+</html>
