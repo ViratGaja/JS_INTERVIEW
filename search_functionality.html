@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Functionality</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+    .item {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search List</h1>
+  <input
+    type="text"
+    id="searchInput"
+    class="search-box"
+    placeholder="Search for items..."
+  />
+  <ul id="itemList">
+    <li class="item">Apple</li>
+    <li class="item">Banana</li>
+    <li class="item">Cherry</li>
+    <li class="item">Date</li>
+    <li class="item">Elderberry</li>
+    <li class="item">Fig</li>
+    <li class="item">Grape</li>
+  </ul>
+
+
+
+    <script>
+
+       var input=document.getElementById('searchInput');
+       var items=document.querySelectorAll('.item')
+
+
+       input.addEventListener('input',function(){
+        var inpuut_2=input.value.toLowerCase();
+
+
+        Array.from(items).forEach((itemss)=>{
+            final=itemss.textContent.toLowerCase();
+            
+            if(final.includes(inpuut_2)){
+                itemss.style.display=""
+            }
+            else{
+                itemss.style.display="none"
+            }
+        })
+       })
+    
+    </script>
+</body>
+</html>
