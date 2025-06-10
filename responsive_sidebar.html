@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .sidebar {
+            background-color: #343a40;
+            color: white;
+            width: 250px;
+            transition: width 0.3s ease;
+        }
+        .sidebar.collapsed {
+            width: 70px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .sidebar ul li:hover {
+            background-color: #495057;
+        }
+        .sidebar ul li.active {
+            background-color: #007bff;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                position: absolute;
+                height: 100%;
+                transform: translateX(-250px);
+                transition: transform 0.3s ease;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toggle-btn">☰</div>
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li data-content="Home">Home</li>
+            <li data-content="About">About</li>
+            <li data-content="Services">Services</li>
+            <li data-content="Contact">Contact</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Welcome</h1>
+        <p>Click items on the sidebar to change this content.</p>
+    </div>
+</div>
+
+<script>
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const sidebar = document.querySelector('.sidebar');
+    const contentArea = document.querySelector('.main-content');
+    const sidebarItems = document.querySelectorAll('.sidebar ul li');
+
+    // Toggle Sidebar
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+
+    // Change Content
+    sidebarItems.forEach(item=>{
+        item.addEventListener('click',function(){
+            sidebarItems.forEach(e=>e.classList.remove('active'))
+            item.classList.add('active')
+        })
+    })
+  
+</script>
+
+</body>
+</html>

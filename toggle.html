@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100%;
+            display: flex;  
+        }
+        .left{
+            width: 30%;
+            background-color: red;
+            color: #fff;
+            height: 100vh;
+            padding: 10px;
+        }
+        .right{
+            width: 70%;
+            background: blue;
+            color: #fff;
+            padding: 10px;
+        }
+        .dynamic{
+            width: 10% !important;
+            transition:  0.5s all ease-in-out;
+        }
+        .hiii:hover{
+            cursor: pointer;
+        }
+        .new_dynam9ic{
+            background-color: green !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div  class="left">
+            <h3>hello</h3>
+
+        </div>
+        <div class="right">
+        <h3 class="hiii">Click Toggle</h3>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var hi=document.querySelector('.hiii');
+        var left=document.querySelector('.left');
+        var right=document.querySelector('.right');
+
+
+
+        hi.addEventListener('click',function(){
+            left.classList.toggle('dynamic')
+            right.classList.add('new_dynam9ic')
+
+        })
+    </script>
+    
+</body>
+</html>
