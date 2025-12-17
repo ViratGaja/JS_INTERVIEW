@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +81,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
 
@@ -114,7 +115,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow-x: auto;
         }
 
@@ -202,7 +203,7 @@
             top: 100%;
             background-color: white;
             min-width: 150px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
             border-radius: 4px;
             z-index: 1000;
             margin-top: 5px;
@@ -263,6 +264,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
@@ -296,175 +298,15 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Actions</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Category</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- <tr>
-                            <td>001</td>
-                            <td>John Doe</td>
-                            <td>john.doe@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2024-01-15</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Jane Smith</td>
-                            <td>jane.smith@example.com</td>
-                            <td>User</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2024-01-14</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Mike Johnson</td>
-                            <td>mike.j@example.com</td>
-                            <td>Manager</td>
-                            <td><span class="status pending">Pending</span></td>
-                            <td>2024-01-13</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>004</td>
-                            <td>Sarah Williams</td>
-                            <td>sarah.w@example.com</td>
-                            <td>User</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2024-01-12</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>005</td>
-                            <td>David Brown</td>
-                            <td>david.b@example.com</td>
-                            <td>User</td>
-                            <td><span class="status inactive">Inactive</span></td>
-                            <td>2024-01-11</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>006</td>
-                            <td>Emily Davis</td>
-                            <td>emily.d@example.com</td>
-                            <td>Manager</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2024-01-10</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>007</td>
-                            <td>Chris Wilson</td>
-                            <td>chris.w@example.com</td>
-                            <td>User</td>
-                            <td><span class="status pending">Pending</span></td>
-                            <td>2024-01-09</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>008</td>
-                            <td>Lisa Anderson</td>
-                            <td>lisa.a@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2024-01-08</td>
-                            <td class="action-cell">
-                                <div class="menu-icon" onclick="toggleMenu(event, this)">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <a href="#">View</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </td>
-                        </tr> -->
+
+                    <tbody id="table">
+
                     </tbody>
                 </table>
             </div>
@@ -473,36 +315,59 @@
 
 
 
+    <script>
 
+        const table_body = document.querySelector('#table');
+
+        fetch('https://fakestoreapi.com/products').then((a) => a.json())
+            .then(a => {
+                a.forEach(b => {
+                    const tr = document.createElement('tr')
+                    tr.innerHTML = `
+                    <td>${b.id}<td>
+                    <td>${b.title}<td>
+                    <td>${b.price}<td>
+                    <td>${b.description}<td>
+                    <td>${b.category}<td>
+        `
+                    table_body.appendChild(tr)
+                })
+
+            })
+            .catch((err) => {
+                console.log(err);
+
+            })
+
+    </script>
 
 
     <script>
-        var input=document.querySelector('.search-box input');
-        var table_data=document.querySelectorAll('tbody tr')
-        input.addEventListener('keyup',()=>{
-            var final_input=input.value.toLowerCase();
-          
+        var input = document.querySelector('.search-box input');
 
-          for(let a of table_data){
-              var final_table_data=a.textContent.toLowerCase()
-            if(final_table_data.includes(final_input)){
-                a.style.display=""
+        input.addEventListener('keyup', () => {
+            var final_input = input.value.toLowerCase();
+            var table_data = document.querySelectorAll('tbody tr')
+            for (let a of table_data) {
+                var final_table_data = a.textContent.toLowerCase()
+                if (final_table_data.includes(final_input)) {
+                    a.style.display = ""
+                }
+                else {
+                    a.style.display = "none"
+                }
             }
-            else{
-                a.style.display="none"
-            }
-          }
         })
 
     </script>
 
 
     <script>
-        var nav_item=document.querySelectorAll('.li');
+        var nav_item = document.querySelectorAll('.li');
 
-        nav_item.forEach(a=>{
-            a.addEventListener("click",function(){
-                nav_item.forEach(b=>b.classList.remove('active'));
+        nav_item.forEach(a => {
+            a.addEventListener("click", function () {
+                nav_item.forEach(b => b.classList.remove('active'));
                 this.classList.add('active')
             })
         })
@@ -511,4 +376,5 @@
 
     </script>
 </body>
+
 </html>
