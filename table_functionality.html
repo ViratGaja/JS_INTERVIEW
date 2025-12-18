@@ -77,6 +77,15 @@
             width: calc(100% - 250px);
         }
 
+        /* Main Content Styles */
+        .main-new {
+            margin-left: 0px !important;
+            padding: 30px;
+            transition: all 0.3s ease-in;
+            width: 100% I !important;
+
+        }
+
         .header {
             background-color: white;
             padding: 20px;
@@ -88,6 +97,7 @@
         .header h1 {
             color: #2c3e50;
             margin-bottom: 20px;
+            cursor: pointer;
         }
 
         .search-box {
@@ -262,6 +272,50 @@
                 width: 100%;
             }
         }
+
+        .action-cell {
+            text-align: center;
+        }
+
+        .three-dots {
+            font-size: 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            background-color: #2980b9;
+            color: #fff;
+            z-index: 10001;
+
+
+        }
+
+        .menu ul li {
+            padding: 10px;
+        }
+
+        .menu ul li:hover {
+            cursor: pointer;
+        }
+
+        .action-cell_1 {
+            position: relative;
+            text-align: center;
+        }
+
+        .side_bar {
+            width: 0px !important;
+            transition: all 0.3s ease-in;
+        }
     </style>
 </head>
 
@@ -287,7 +341,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="header">
-                <h1>Welcome to Dashboard</h1>
+                <h1 class="h1">Toggle</h1>
                 <div class="search-box">
                     <input type="text" class="search" placeholder="Search...">
                 </div>
@@ -302,19 +356,97 @@
                             <th>Price</th>
                             <th>Description</th>
                             <th>Category</th>
+                            <th>action</th>
                         </tr>
                     </thead>
 
                     <tbody id="table">
+                        <tr>
+                            <td>1</td>
+                            <td>Hello</td>
+                            <td>234</td>
+                            <td>Hello everybody and welcome to todays match</td>
+                            <td>Football</td>
+                            <td class="action-cell">
+                                <span class="three-dots">⋮</span>
+                            </td>
 
+                        </tr>
+                        <tr class="tr_remove">
+                            <td>1</td>
+                            <td>Hello</td>
+                            <td>234</td>
+                            <td>Hello everybody and welcome to todays match</td>
+                            <td class="dynamic">Football</td>
+                            <td class="action-cell_1 text-center">
+                                <span onclick="menu(this)" class="three-dots">⋮</span>
+                                <div class="menu">
+                                    <ul>
+                                        <li class="Success">Success</li>
+                                        <li class="remove">remove</li>
+                                    </ul>
+
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Hello</td>
+                            <td>234</td>
+                            <td>Hello everybody and welcome to todays match</td>
+                            <td>Football</td>
+                            <td class="action-cell">
+                                <span class="three-dots">⋮</span>
+                            </td>
+
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </main>
     </div>
+    <script>
+        function menu(e) {
+            e.nextElementSibling.style.display = "block";
+
+            document.addEventListener('click', function (r) {
+                if (!r.target.closest('.action-cell_1')) {
+                    document.querySelectorAll('.menu').forEach(q => {
+                        q.style.display = "none"
+                    })
+                }
+            })
+
+        }
+    </script>
+
+    <script>
+        var remove = document.querySelector('.remove')
+        var tr_remove = document.querySelector('.tr_remove')
+        var Success = document.querySelector('.Success')
+        var dynamic = document.querySelector('.dynamic')
+        var sidebar = document.querySelector('.sidebar')
+        var h1 = document.querySelector('.h1');
+        var main_content = document.querySelector('.main-content')
+
+        Success.addEventListener('click', function () {
+            dynamic.textContent = "Success"
+        })
 
 
+        remove.addEventListener('click', function () {
+            tr_remove.style.display = "none"
+        })
 
+
+        h1.addEventListener('click', function () {
+            sidebar.classList.toggle('side_bar');
+            main_content.classList.toggle('main-new')
+        })
+    </script>
+
+    <!-- 
     <script>
 
         const table_body = document.querySelector('#table');
@@ -339,7 +471,7 @@
 
             })
 
-    </script>
+    </script> -->
 
 
     <script>
