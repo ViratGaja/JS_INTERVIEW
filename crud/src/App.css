@@ -1,0 +1,40 @@
+.curd{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.curd h1{
+  text-align: center;
+}
+.form input{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: 1px solid rgba(128, 128, 128, 0.411);
+}
+
+.form button{
+  padding: 10px 20px;
+  text-align: center;
+  background-color: aqua;
+  border: none;
+  color: #3a3131;
+  border-radius: 5px;
+  cursor: pointer;
+
+  
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid green;
+  margin-top: 30px;
+}
+
+table th, table td{
+  text-align: center;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  padding: 10px;
+}
