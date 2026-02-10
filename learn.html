@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="hello">HEllo</p>
+  <button onclick={final()}>click</button>
+
+  <script>
+    function final(){
+        document.querySelector(".hello").innerText="WOrld"
+    }
+  </script>
+
+
+
+
+    <h1>list</h1>
+    <input type="text" class="text">
+    <button onclick="dynamic()">add</button>
+    <ul></ul>
+
+    <script>
+          function dynamic() {
+            const text = document.querySelector(".text").value.trim()
+            const li = document.createElement("li")
+            li.textContent = text
+            const ul = document.querySelector("ul")
+            const remove = document.createElement("button")
+            remove.textContent = "delete";
+            remove.addEventListener("click", function () {
+                li.remove()
+            })
+            li.appendChild(remove)
+            ul.appendChild(li);
+            input.value=" "
+
+
+        }
+    </script>
+
+
+
+
+
+
+
+    <!-- event Delegation -->
+
+
+    <ul id="list">
+        <li>List</li>
+        <li>hello</li>
+    </ul>
+    <script>
+        const list = document.getElementById("list")
+        list.addEventListener("click", function (e) {
+            alert(e.target.innerText)
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
