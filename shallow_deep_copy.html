@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const shallow = {
+            name: "king",
+            address: {
+                city: "a1",
+                city_1: "a2"
+            }
+        }
+
+        const result = { ...shallow }
+        console.log(result.address.city)
+
+
+
+
+        const shallow_1 = {
+            name: "king",
+            address: {
+                city: "a1",
+                city_1: "a2"
+            }
+        }
+
+        const result_1 = JSON.parse(JSON.stringify(shallow_1))
+        console.log(result_1.address.city_1)
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
