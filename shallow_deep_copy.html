@@ -10,6 +10,8 @@
 <body>
 
     <script>
+
+        // shallow copy
         const shallow = {
             name: "king",
             address: {
@@ -23,8 +25,8 @@
 
 
 
-
-        const shallow_1 = {
+        // deep copy
+        const deep = {
             name: "king",
             address: {
                 city: "a1",
@@ -32,7 +34,7 @@
             }
         }
 
-        const result_1 = JSON.parse(JSON.stringify(shallow_1))
+        const result_1 = JSON.parse(JSON.stringify(deep))
         console.log(result_1.address.city_1)
 
 
