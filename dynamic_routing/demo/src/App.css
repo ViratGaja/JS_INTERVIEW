@@ -1,0 +1,19 @@
+.cards{
+  width: 800px;
+  margin: 0 auto;
+}
+h1{
+  text-align: center;
+}
+.main_card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+ 
+}
+
+.main_dynamic{
+   border: 1px solid rgba(112, 112, 112, 0.432);  
+   padding: 10px;
+}
