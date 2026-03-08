@@ -121,25 +121,53 @@
 // console.log(result)
 
 
-var duplicate="aabbccdd";
+// var duplicate="aabbccdd";
 
-var original="";
+// var original="";
 
-for(let i=0;i<duplicate.length;i++){
-    let isduplite=false
-    for(let j=0;j<original.length;j++){
-        if(duplicate[i]===original[j]){
-            isduplite=true;
-            break
+// for(let i=0;i<duplicate.length;i++){
+//     let isduplite=false
+//     for(let j=0;j<original.length;j++){
+//         if(duplicate[i]===original[j]){
+//             isduplite=true;
+//             break
+//         }
+//     }
+//     if(!isduplite){
+//         original+=duplicate[i]
+//     }
+// }
+
+
+// console.log(original)
+
+
+// Flat without using flatmap
+
+
+const nested=[1, [2, 3], [4, 5]];
+
+const flat=[];
+
+for(let i=0;i<nested.length;i++){
+
+    const result=nested[i]
+
+    if(Array.isArray(result)){
+        for(let j=0;j<result.length;j++){
+            flat.push(result[j])
         }
     }
-    if(!isduplite){
-        original+=duplicate[i]
+    else{
+        flat.push(result)
     }
 }
 
 
-console.log(original)
+console.log(flat);
+
+
+
 
 
 
