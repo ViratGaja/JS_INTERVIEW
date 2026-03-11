@@ -145,28 +145,72 @@
 // Flat without using flatmap
 
 
-const nested=[1, [2, 3], [4, 5]];
+// const nested=[1, [2, 3], [4, 5]];
 
-const flat=[];
+// const flat=[];
 
-for(let i=0;i<nested.length;i++){
+// for(let i=0;i<nested.length;i++){
 
-    const result=nested[i]
+//     const result=nested[i]
 
-    if(Array.isArray(result)){
-        for(let j=0;j<result.length;j++){
-            flat.push(result[j])
+//     if(Array.isArray(result)){
+//         for(let j=0;j<result.length;j++){
+//             flat.push(result[j])
+//         }
+//     }
+//     else{
+//         flat.push(result)
+//     }
+// }
+
+
+// console.log(flat);
+
+
+
+
+// add the value and find the index
+// function result(arr){
+//     let index=[];
+//     let sum=0;
+
+
+//     for(let i=0;i<arr.length;i++){
+
+//         index.push(i);
+//         sum+=arr[i]
+
+//         if(sum===125){
+//             return index
+//         }
+//         if(index.length>3){
+//             index.shift()
+//         }
+     
+//     }
+//        return index
+// }
+// const arr=[15,20,35,60,30]
+// console.log(result(arr))
+
+
+// same but logic change
+function main_result(){
+let arr_1=[2,3,6,7,8,9]
+
+for(let i=0;i<arr_1.length;i++){
+    for(let j=i+1;j<arr_1.length;j++){
+        for(let k=j+1;k<arr_1.length;k++){
+            if(arr_1[i]+arr_1[j]+arr_1[k]===11){
+            return[i,j,k]
         }
-    }
-    else{
-        flat.push(result)
+        }
+        
     }
 }
+}
 
-
-console.log(flat);
-
-
+console.log(main_result())
 
 
 
