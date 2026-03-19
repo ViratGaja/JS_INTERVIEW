@@ -195,22 +195,62 @@
 
 
 // same but logic change
-function main_result(){
-let arr_1=[2,3,6,7,8,9]
+// function main_result(){
+// let arr_1=[2,3,6,7,8,9]
 
-for(let i=0;i<arr_1.length;i++){
-    for(let j=i+1;j<arr_1.length;j++){
-        for(let k=j+1;k<arr_1.length;k++){
-            if(arr_1[i]+arr_1[j]+arr_1[k]===11){
-            return[i,j,k]
-        }
-        }
+// for(let i=0;i<arr_1.length;i++){
+//     for(let j=i+1;j<arr_1.length;j++){
+//         for(let k=j+1;k<arr_1.length;k++){
+//             if(arr_1[i]+arr_1[j]+arr_1[k]===11){
+//             return[i,j,k]
+//         }
+//         }
         
-    }
-}
+//     }
+// }
+// }
+
+// console.log(main_result())
+
+
+
+
+
+
+
+// function add(){
+//     const array=[2,4,5,7,8,4];
+
+
+//     for(let i=0;i<array.length;i++){
+//         for(let j=i+1;j<array.length;j++){
+//             if(array[i]+array[j]===6){
+//                 return [i,j]
+//             }
+//         }
+//     }
+
+// }
+
+
+
+// console.log(add())
+
+
+
+let string="Hello";
+
+let reverseed="";
+
+for(let i=string.length-1;i>=0;i--){
+    reverseed+=string[i]
 }
 
-console.log(main_result())
+
+console.log(reverseed)
+
+
+
 
 
 
