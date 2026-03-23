@@ -238,16 +238,41 @@
 
 
 
-let string="Hello";
+// let string="Hello";
 
-let reverseed="";
+// let reverseed="";
 
-for(let i=string.length-1;i>=0;i--){
-    reverseed+=string[i]
-}
+// for(let i=string.length-1;i>=0;i--){
+//     reverseed+=string[i]
+// }
 
 
-console.log(reverseed)
+// console.log(reverseed)
+
+
+
+// let arr=[1,2,3,3,3,4,5];
+
+// let result=arr.filter((value,index)=>{
+    
+//   return  arr.indexOf(value)===index;
+// })
+// console.log(result)
+
+
+
+
+
+let arr=[1,2,[3,4],[5,6]];
+
+
+let result=arr.flatMap(x=>
+    x
+)
+console.log(result)
+
+
+
 
 
 
